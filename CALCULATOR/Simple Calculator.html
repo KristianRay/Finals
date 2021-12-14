@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Simple Calculator</title>
+</head>
+<body style="text-align: center; justify-content: center; background-color: khaki;">
+    <h1 style="font-family: sans-serif; text-align: center; color: lightslategray;">My calculator</h1>
+<table border="1" style="text-align: center; " align="center" cellpadding="5" cellspacing="5" width="600">
+<tr align="center" style="background-color:lemonchiffon;">
+<td>First number</td>
+<td>Second Number</td>
+<td>Result</td>
+</tr>
+<tr align="center" name="result" style="background-color: lemonchiffon;">
+<td><input name="number1" type="text" size=10 id='num1'/></td>
+<td><input name="number2" type="text" size=10 id='num2'/></td>
+<td> <input name="display" type="text" id='result' readonly ></td>
+</tr>
+<tr>
+<td colspan="3" style="background-color: linen;">
+<button onclick="showresult('1')">+</button>
+<button onclick="showresult('2')">-</button>
+<button onclick="showresult('3')">*</button>
+<button onclick="showresult('4')">/</button>
+<button onclick="showresult('5')">%</button>
+<button id="clear" onclick="addEventListener('click')">Clear</button>
+<button onclick="about()">About</button>
+
+</td>
+</tr>
+
+</table>
+<footer style="margin-top: 450px; font: 1em sans-serif;">
+    <div>
+        Copyright &copy; 2021 Simple Calculator
+    </div>
+</footer>
+</body>
+<script>
+    function showresult(choise){
+var n1=parseFloat(document.getElementById('num1').value);
+var n2=parseFloat(document.getElementById('num2').value);
+var r;
+var c=choise;
+
+switch(c)
+	{
+	case '1':
+		r=n1+n2;
+		break;
+	case '2':
+		r=n1-n2;
+		break;
+	case '3':
+		r=n1*n2;
+		break;
+	case '4': 
+		r=n1/n2;
+		break;
+	case '5':
+		r=n2*100/n1;
+		break;
+	default:
+		break;
+			
+	}
+document.getElementById('result').value=r;
+}
+function about() {
+  alert("Created By:\n Parial, Kristian Ray T.\n IT-201");
+}
+window.addEventListener('load', () => {
+        const button = document.querySelector('#clear');
+        button.addEventListener('click', () => {
+            document.querySelector('#num1').value = "";
+            document.querySelector('#num2').value = "";
+            document.querySelector('#result').value = "";
+        });
+    });
+
+</script>
+</html>
+    
+</body>
+</html>
